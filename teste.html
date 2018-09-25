@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+    }
+
+    ul {
+        /* display: flex;
+        flex-direction: row; */
+
+    }
+
+    li {
+        display: inline-block;
+        list-style: none;
+        width: 40%; 
+        text-align: center;
+    }
+    .mudarLayout{
+        cursor: pointer;
+    }
+    .content{ 
+        position: relative;
+        width: 100%;
+        overflow-x: auto;
+        overflow-y: hidden;
+    }
+    .content ul{ 
+        background-color: #fff;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    text-align: center;
+    width: 100%;
+    display: block;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    white-space: nowrap;
+    }
+    .content li{ 
+        padding: 0 1.25rem;
+        display: inline-block;
+        position: relative;
+    }
+</style>
+
+<body>
+
+    <div class="mudarLayout">
+        Linha
+    </div>
+    </div>
+    <div class="content">
+        <ul>
+            <li>teste</li>
+            <li>teste</li>
+            <li>teste</li>
+            <li>teste</li>
+            <li>teste</li>
+            <li>teste</li>
+            <li>teste</li>
+            <li>teste</li>
+            <li>teste</li>
+        </ul>
+    </div>
+
+    <script>
+        (function () {
+            const btnMudaLayout = document.querySelector('.mudarLayout');
+            const content = document.querySelector('.content')
+
+            btnMudaLayout.addEventListener('click', function () {
+                content.classList.toggle('bloco');
+                const list = document.querySelector('.content ul');
+
+                if (content.classList.contains('bloco')) {
+                    list.style.display = 'block';
+                }else{
+                    list.style.display = 'inline-block';
+                }
+            })
+        })();
+    </script>
+</body>
+
+</html>
